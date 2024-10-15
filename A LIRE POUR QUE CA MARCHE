@@ -1,0 +1,6 @@
+Si ça marche pas : Mettre la commande :
+
+composer require symfony/cache
+
+
+

@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'pergaud/gestion-taches-scrum',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'fbfd2b85fbbe76575685bd9eba15f3017dd57ed6',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -92,9 +92,9 @@
             'dev_requirement' => false,
         ),
         'pergaud/gestion-taches-scrum' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'fbfd2b85fbbe76575685bd9eba15f3017dd57ed6',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -108,6 +108,12 @@
             'install_path' => __DIR__ . '/../psr/cache',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'psr/cache-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '2.0|3.0',
+            ),
         ),
         'psr/container' => array(
             'pretty_version' => '2.0.2',
@@ -131,6 +137,36 @@
             'dev_requirement' => false,
             'provided' => array(
                 0 => '1.0|2.0|3.0',
+            ),
+        ),
+        'psr/simple-cache-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0|2.0|3.0',
+            ),
+        ),
+        'symfony/cache' => array(
+            'pretty_version' => 'v7.1.5',
+            'version' => '7.1.5.0',
+            'reference' => '86e5296b10e4dec8c8441056ca606aedb8a3be0a',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/cache',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/cache-contracts' => array(
+            'pretty_version' => 'v3.5.0',
+            'version' => '3.5.0.0',
+            'reference' => 'df6a1a44c890faded49a5fca33c2d5c5fd3c2197',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/cache-contracts',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/cache-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.1|2.0|3.0',
             ),
         ),
         'symfony/console' => array(
