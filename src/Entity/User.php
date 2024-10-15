@@ -3,7 +3,7 @@
 namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity]
-#[ORM\Table(name: 'users')]
+#[ORM\Table(name: 'users')] // Nom de la table qu'on veut créer
 class User
 {
     #[ORM\Id]

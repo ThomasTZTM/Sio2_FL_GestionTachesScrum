@@ -4,3 +4,4 @@ composer require symfony/cache
 
 
 
+PS C:\Users\michelint\PhpstormProjects\gestiontachesscrum> php bin\console.php orm:schema-tool:create
