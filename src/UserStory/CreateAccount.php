@@ -20,7 +20,7 @@ class CreateAccount
         // Si t'elle n'est pas le cas, on lance une exception
 
         if (!(!empty($pseudo) && !empty($email) && !empty($password))) {
-
+            truc
         }
 
         // Vérifier si l'email est valide
