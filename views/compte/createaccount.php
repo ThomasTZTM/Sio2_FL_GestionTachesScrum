@@ -1,48 +1,5 @@
 <?php
 
-
-$erreurs = [];
-$titre = "";
-$nbpage = "";
-$auteur = "";
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    //formulaire a été soumis
-    //Traiter les données du formulaire
-    //Récupérer les valeur saisis par l'utilisateur
-    //superglobal $post qui va etre un tablo assoc
-    $titre = $_POST["titre"];
-    $nbpage = $_POST["nbpage"];
-    $auteur = $_POST["auteur"];
-
-    //---------------------------------------------------------------------------------
-    //---------------------------------------------------------------------------------
-    //---------------------------------------------------------------------------------
-
-    if (empty($titre)) {
-        $erreurs['titre'] = "Le tire est obligatoire";
-    }if (empty($nbpage)) {
-        $erreurs['nbpage'] = "Le nombre de page est obligatoire";
-    }if (empty($auteur)) {
-        $erreurs['auteur'] = "L'auteur est obligatoire";
-
-        //---------------------------------------------------------------------------------
-        //---------------------------------------------------------------------------------
-        //---------------------------------------------------------------------------------
-    }
-    if (count($erreurs) == 99999) {
-        //$nvlivre = new Livre();
-        //$nvlivre->setTitre($_POST['titre']);
-        //$nvlivre->setNbPage($_POST['nbpage']);
-        //$nvlivre->setAuteur($_POST['auteur']);
-
-
-        //$entityManager = require_once __DIR__ . "/../../config/bootstrap.php";
-        //$entityManager->persist($nvlivre); // n'existe pas directement le insert mais le prépare juste
-        //$entityManager->flush();
-
-    }
-}
-
 ?>
 
 <!doctype html>
@@ -75,17 +32,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     ?>
 
                     <div class="mb-3">
-                        <label for="titre" class="form-label text-white">Pseudo : </label>
+                        <label for="pseudo" class="form-label text-white">Pseudo : </label>
                         <input
                             type="text"
-                            class="form-control <?= isset($erreurs['titre']) ? "border border-2 border-danger" : "" ?>"
-                            id="titre"
-                            name="titre"
-                            value="<?= $titre ?>"
-                            placeholder="Saisir le titre du livre"
+                            class="form-control <?= isset($erreurs['pseudo']) ? "border border-2 border-danger" : "" ?>"
+                            id="pseudo"
+                            name="pseudo"
+                            value="<?= $pseudo ?>"
+                            placeholder="Saisir votre pseudo"
                         >
-                        <?php if (isset($erreurs['titre'])) : ?>
-                            <p class="form-text text-danger"><?= $erreurs['titre'] ?></p>
+                        <?php if (isset($erreurs['pseudo'])) : ?>
+                            <p class="form-text text-danger"><?= $erreurs['pseudo'] ?></p>
                         <?php endif; ?>
                     </div>
 
@@ -98,17 +55,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
                     <div class="mb-3">
-                        <label for="nbpage" class="form-label text-white">Adresse EMAIL : </label>
+                        <label for="email" class="form-label text-white">Adresse EMAIL : </label>
                         <input
                             type="text"
-                            class="form-control <?= isset($erreurs['nbpage']) ? "border border-2 border-danger" : "" ?>"
-                            id="nbpage"
-                            name="nbpage"
-                            value="<?= $nbpage ?>"
-                            placeholder="Saisir le nombre de page du livre"
+                            class="form-control <?= isset($erreurs['email']) ? "border border-2 border-danger" : "" ?>"
+                            id="email"
+                            name="email"
+                            value="<?= $email ?>"
+                            placeholder="Saisir l'adresse mail'"
                         >
-                        <?php if (isset($erreurs['nbpage'])) : ?>
-                            <p class="form-text text-danger"><?= $erreurs['nbpage'] ?></p>
+                        <?php if (isset($erreurs['email'])) : ?>
+                            <p class="form-text text-danger"><?= $erreurs['email'] ?></p>
                         <?php endif; ?>
                     </div>
 
@@ -121,17 +78,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
                     <div class="mb-3">
-                        <label for="auteur" class="form-label text-white">Mot de passe : </label>
+                        <label for="mdp" class="form-label text-white">Mot de passe : </label>
                         <input
                             type="text"
-                            class="form-control <?= isset($erreurs['auteur']) ? "border border-2 border-danger" : "" ?>"
-                            id="auteur"
-                            name="auteur"
-                            value="<?= $auteur ?>"
-                            placeholder="Saisir le auteur du livre"
+                            class="form-control <?= isset($erreurs['mdp']) ? "border border-2 border-danger" : "" ?>"
+                            id="mdp"
+                            name="mdp"
+                            value="<?= $mdp ?>"
+                            placeholder="Saisir le mot de passe"
                         >
-                        <?php if (isset($erreurs['auteur'])) : ?>
-                            <p class="form-text text-danger"><?= $erreurs['auteur'] ?></p>
+                        <?php if (isset($erreurs['mdp'])) : ?>
+                            <p class="form-text text-danger"><?= $erreurs['mdp'] ?></p>
                         <?php endif; ?>
                     </div>
 

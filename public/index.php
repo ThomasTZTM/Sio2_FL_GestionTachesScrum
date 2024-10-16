@@ -19,6 +19,7 @@
 </div>
 <hr class="my-4 opacity-75 container">
 
+
 <?php
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////// CONFIGURATION //////////////////////////////////////////////
@@ -26,6 +27,7 @@
 ?>
 
 <?php
+use App\UserStory\CreateAccount;
 // Recupérer l'entityManager
 $entityManager = require_once __DIR__ . '/../config/bootstrap.php';
 ?>
@@ -46,12 +48,15 @@ $entityManager = require_once __DIR__ . '/../config/bootstrap.php';
     switch ($route) {
 
         case 'acceuil':
-            require_once __DIR__ . "/../views/acceuil/acceuil.php";
+            $acceuilController = new \App\Controllers\AcceuilController();
+            $acceuilController->acceuil();
             break;
 
         case 'creercompte':
-            require_once __DIR__ . "/../views/compte/createaccount.php";
+            $ConnexionController = new \App\Controllers\ConnexionController($entityManager);
+            $ConnexionController->creer();
             break;
+
 
         default:
             // Erreur 404
