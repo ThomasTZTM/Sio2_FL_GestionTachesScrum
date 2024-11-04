@@ -57,6 +57,11 @@ $entityManager = require_once __DIR__ . '/../config/bootstrap.php';
             $ConnexionController->creer();
             break;
 
+        case 'login':
+            $ConnexionController = new \App\Controllers\ConnexionController($entityManager);
+            $ConnexionController->login();
+            break;
+
 
         default:
             // Erreur 404

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use App\Entity\User;
 use App\UserStory\CreateAccount;
+use App\UserStory\Login;
 use Doctrine\ORM\EntityManager;
 
 class ConnexionController
@@ -43,6 +44,25 @@ class ConnexionController
         }
         require_once __DIR__ . "/../../views/compte/createaccount.php";
 
+    }
+
+
+    public function login()
+    {
+        $error = null;
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $login = new Login($this->entityManager);
+            $user = $login->execute($_POST['email'], $_POST['password']);
+            if ($user) {
+                $_SESSION['user_id'] = $user->getId();
+                $_SESSION['user_name'] = $user->getPseudo();
+                header('Location: index.php?route=acceuil');
+                exit;
+            } else {
+                $error = "Email ou mot de passe incorrect.";
+            }
+        }
+        require __DIR__ . '/../../views/compte/Login.php';
     }
 
 
